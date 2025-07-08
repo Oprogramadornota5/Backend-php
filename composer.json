@@ -1,0 +1,15 @@
+{
+    "require": {
+        "symfony/runtime": "^7.3",
+        "doctrine/doctrine-migrations-bundle": "^3.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    },
+    "require-dev": {
+        "symfony/dotenv": "^7.3",
+        "symfony/maker-bundle": "^1.64"
+    }
+}
