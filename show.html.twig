@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detalhes do Veículo{% endblock %}
+
+{% block body %}
+    <h1>{{ vehicle.marca }} {{ vehicle.modelo }}</h1>
+    <ul>
+        <li>Ano: {{ vehicle.ano }}</li>
+        <li>Preço: R$ {{ vehicle.preco }}</li>
+        <li>Disponível: {{ vehicle.disponivel ? 'Sim' : 'Não' }}</li>
+        <li>Descrição: {{ vehicle.descricao }}</li>
+    </ul>
+
+    <a href="{{ path('vehicle_edit', {'id': vehicle.id}) }}">Editar</a>
+    <form method="post" action="{{ path('vehicle_delete', {'id': vehicle.id}) }}" onsubmit="return confirm('Tem certeza?');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ vehicle.id) }}">
+        <button class="btn btn-danger">Excluir</button>
+    </form>
+
+    <a href="{{ path('vehicle_index') }}">Voltar</a>
+{% endblock %}

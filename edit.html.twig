@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Veículo{% endblock %}
+
+{% block body %}
+    <h1>Editar Veículo</h1>
+    {% include 'vehicle/_form.html.twig' with {'form': form, 'button_label': 'Atualizar'} %}
+    <a href="{{ path('vehicle_index') }}">Voltar</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Veículos{% endblock %}
+
+{% block body %}
+    <h1>Lista de Veículos</h1>
+    <a href="{{ path('vehicle_new') }}">Novo Veículo</a>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li>
+                <a href="{{ path('vehicle_show', {'id': vehicle.id}) }}">
+                    {{ vehicle.marca }} {{ vehicle.modelo }} - {{ vehicle.ano }}
+                </a>
+            </li>
+        {% else %}
+            <li>Nenhum veículo cadastrado.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
